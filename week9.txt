@@ -1,0 +1,43 @@
+การสร้าง git สัปดาห์ที่ 2
+ ⁃ git clone คือการนำไฟล์เก่ามาแก้ไข 
+ ⁃ 
+วิธีทำคือ
+ ⁃ git clone แล้วตามด้วยลิ้งค์ของ git ไฟล์งานเก่า ที่สำคัญคืออย่าลืมเปลี่ยน working directory คือ
+: cd …… (ชื่อโฟล์เดอร์)
+
+วิธีการสร้าง branch 
+ ⁃ git branch ตามด้วยชื่อที่จะตั้งใหม่ (การตั้งชื่อใหม่ทำให้ไม่ปะปนกันและแยกการทำงานของbranch ) 
+ ⁃ 
+วิธีการตรวจสอบว่า branch ใดทำตามคำสั่งไหนบ้าง
+ ⁃ git branch : ซึ่งจะสังเกตเห็นได้ว่ามี * อยู่หน้า branch ที่กำลังทำงานปัจจุบัน
+
+วิธีการเปลี่ยน branch ไปที่ feature (การสลับ branch)
+ ⁃ git checkout feature 
+ ⁃ ที่สำคัญต้องตรวจอีกว่า * อยู่หน้าของ feature หรือยังด้วยคำสั่ง git branch
+
+การ merge แบบไม่มี conflict
+ ⁃ เพิ่มไฟล์ fecture1.txt (อยู่ใน branch feature)
+ ⁃ เพิ่มไฟล์ master1.txt (อยู่ใน branch master
+ ⁃ 1. ต้องเปลี่ยน branch : git chaeckout feature
+ ⁃ 2. เพิ่มไฟล์ feature1.txt
+ ⁃ 3. เช็ค git status ทุกครั้งที่เพิ่มไฟล์ 
+ ⁃ 4. git add ตามด้วยชื่อไฟล์ (feature1.txt)
+ ⁃ 5. git commit เพื่อเก็บโดยคำสั่ง git commit -m "ชื่อไฟล์"
+
+ ⁃ เพิ่มอีกไฟล์คือ madter1.txt
+ ⁃ ทำแบบเดิมจากด้านบนตั้งแต่ข้อ 1-5
+
+*** ใช้ git log adog ดู checkpointer ทั้งหมด ***
+ ⁃ git log --all --decorate --oneline --graph
+              (จะมี master กับ feature อยู่)
+การ push master
+ ⁃ เปลี่ยน git checkout master
+ ⁃ ดูโดยคำสั่ง git log --all --decorate --oneline --graph
+ ⁃ push ไปที่ branch คือ git push origin master (จะมีขึ้นให้ login)
+ ⁃ ตรวจสอบอีกครั้ง git log --all --decorate --oneline --graph
+** log adog เป็นการดูว่า save ไว้ที่ไหน branch ไหน **
+
+การ push feature
+ ⁃ ทำเหมือนการ push master จากข้อคาวมด้านบน
+
+การ pull แบบไม่มี conflict ซึ่ง git pull จะตรงข้ามกับ git push
